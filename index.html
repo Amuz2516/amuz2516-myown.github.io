@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Organizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user-circle"></i> My Personal Organizer</h1>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class="tab active" onclick="openTab('todo')"><i class="fas fa-tasks"></i> To-Do</button>
+            <button class="tab" onclick="openTab('budget')"><i class="fas fa-wallet"></i> Budget</button>
+            <button class="tab" onclick="openTab('contacts')"><i class="fas fa-address-book"></i> Contacts</button>
+            <button class="tab" onclick="openTab('grocery')"><i class="fas fa-shopping-cart"></i> Grocery</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="todo" class="tab-content active">
+            <div class="todo-section">
+                <div class="input-group">
+                    <input type="text" id="todoInput" placeholder="New task...">
+                    <button onclick="addTodo()">Add</button>
+                </div>
+                <ul id="todoList"></ul>
+            </div>
+        </div>
+
+        <div id="budget" class="tab-content">
+            <div class="budget-section">
+                <div class="input-group">
+                    <input type="number" id="totalBudget" placeholder="Total budget">
+                    <button onclick="setBudget()">Set Budget</button>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="expenseName" placeholder="Expense name">
+                    <input type="number" id="expenseAmount" placeholder="Amount">
+                    <button onclick="addExpense()">Add Expense</button>
+                </div>
+                <div id="budgetDisplay"></div>
+                <ul id="expensesList"></ul>
+            </div>
+        </div>
+
+        <!-- Contacts Content -->
+        <div id="contacts" class="tab-content">
+            <div class="card">
+                <div class="input-group">
+                    <input type="text" id="contactName" placeholder="Name">
+                    <input type="email" id="contactEmail" placeholder="Email">
+                    <input type="date" id="contactDate">
+                    <button class="primary" onclick="addContact()"><i class="fas fa-plus"></i> Add Contact</button>
+                </div>
+                <div id="contactsList" class="list"></div>
+            </div>
+        </div>
+
+        <!-- Grocery Content -->
+        <div id="grocery" class="tab-content">
+            <div class="card">
+                <div class="input-group">
+                    <input type="text" id="groceryItem" placeholder="Add grocery item">
+                    <button class="primary" onclick="addGrocery()"><i class="fas fa-plus"></i> Add Item</button>
+                </div>
+                <div id="groceryList" class="list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
