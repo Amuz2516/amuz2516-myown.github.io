@@ -1,0 +1,1 @@
+# amuz2516-myown.github.io
